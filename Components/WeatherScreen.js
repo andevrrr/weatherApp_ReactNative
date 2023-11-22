@@ -10,6 +10,10 @@ const WeatherScreen = () => {
         // Fetch weather data from an API
     };
 
+    const weatherEmojis = ['☀️', '☁️', '🌧️', '🌫️'];
+    const windSpeed = '5 m/s';
+    const temp = 30;
+
     return (
         <View style={styles.container}>
             <Header location={location} />
@@ -20,6 +24,9 @@ const WeatherScreen = () => {
                 placeholder="Enter Location"
             />
             <Button title="Refresh" onPress={fetchWeatherData} />
+            <Text style={styles.emoji}>{weatherEmojis[0]}</Text>
+            <Text style={styles.text}>Temperature: {temp}°C</Text>
+            <Text style={styles.text}>Wind speed: {windSpeed}</Text>
         </View>
     );
 };
@@ -39,7 +46,14 @@ const styles = StyleSheet.create({
         padding: 10,
         marginBottom: 10,
     },
+    emoji: {
+        fontSize: 200,
+    },
+    text: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginBottom: 5,
+    },
 });
 
 export default WeatherScreen;
-
