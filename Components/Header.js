@@ -4,6 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 const Header = ({ location }) => (
     <View style={styles.headerContainer}>
         <Text style={styles.headerText}>{location}</Text>
+        <View style={styles.underline}></View>
     </View>
 );
 
@@ -16,6 +17,12 @@ const styles = StyleSheet.create({
         color: 'black',
         fontSize: 24,
         fontWeight: 'bold',
+    },
+    underline: {
+        backgroundColor: 'black',
+        height: 2,
+        width: 300,
+        marginTop: 5,
     },
 });
 
